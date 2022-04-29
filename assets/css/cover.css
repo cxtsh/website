@@ -27,7 +27,8 @@ body, html {
 
 .bg {
   /* The image used */
-  background-image: url("/assets/img/background.jpg");
+  background-image: url("/website/assets/img/background.jpg");
+  /* Github Pages: use /website/assets/... instead of /assets/... */
 
   /* Full height */
   height: 100%;

@@ -1,0 +1,224 @@
+/*
+* Source code written by Panagiotis Kalos for cxt's website
+* Author's website: https://malwarepad.com/
+*/
+
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('/assets/ttf/helveticaneue.ttf');
+} /* Add Bootstrap's font */
+
+body {
+	--accent-color: #007bff;
+	--text-color: white;
+	--article-sep-color: rgb(0, 0, 0, 0.5);
+	--copyright-color: rgb(189, 186, 186);
+	--pfp-radius: 0; /* Change to 5 rem to profile-crop */
+}
+
+html, body {
+    height: 100%;
+	text-shadow: 0 0.05rem 0.1rem rgb(0 0 0 / 50%);
+} /* height and text shadow */
+
+body {
+    margin: 0;
+    padding: 0;
+	background-image: url("/assets/img/background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: var(--text-color);
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	padding-left: 8%;
+	padding-right: 8%;
+	overflow-x: hidden;
+} /* Body properties */
+
+/* No decorations for links (a) */
+
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+	color: var(--text-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Bootstrap-like styling for headings */
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h1 {
+	font-size: calc(1.375rem + 1.2vw);
+}
+
+h3 {
+	font-size: calc(1.3rem + .2vw);
+}
+
+/* Body flexin */
+
+.root {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* Navbar (Navigation pane on top) */
+
+.navbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.navbar div {
+	padding-top: 1rem;
+}
+
+.navbar div a {
+	text-decoration: none;
+	color: var(--text-color);
+}
+
+.navbar-link {
+	font-size: 1rem;
+	line-height: 1.35rem;
+}
+
+/* Root page container */
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.container div {
+	margin-bottom: 1rem;
+}
+
+.container:last-child {
+	margin-bottom: 0 !important;
+}
+
+/* Home page social links (fa icon-links) */
+
+.social-container i {
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+	font-size: 1.7rem;
+}
+
+/* cxt pfp */
+
+.pfp {
+	border-radius: var(--pfp-radius);
+	max-width: 169px;
+	max-height: 169px;
+	margin-bottom: 1rem;
+}
+
+/* Copyright notice on the bottom of the page */
+
+.copyright {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	color: var(--copyright-color);
+}
+
+.copyright a {
+	color: var(--copyright-color);
+}
+
+/* Black faded background with 0.5 transparency */
+
+.article-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: var(--article-sep-color);
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+
+/* Standard template stuff */
+
+button {
+	border: none;
+	border-radius: 0.3rem;
+	padding: 5px;
+	background-color: var(--accent-color);
+    border-color: var(--accent-color);
+	font-size: larger;
+	color: var(--text-color);
+	transition: 0.2s;
+}
+
+button:hover {
+	border-width: 2rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+table tr th {
+	font-weight: bold;
+}
+
+li::marker {
+	color: var(--accent-color);
+	font-size: 1.5em;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table td, th {
+	border: 0.15em solid var(--accent-color);
+	padding: 5px;
+}
+
+.split-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.split-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.split-row div {
+	padding-right: 2.5rem;
+}
+
+.split-row div:last-child {
+	padding-right: 0 !important;
+}
+
+.pm-l {
+	padding-bottom: 5px;
+}
+
+/* Mobile view */
+
+@media only screen and (max-width: 800px) {
+	.split-row { /* Disable splitting rows when using mobile */
+		display: block;
+	}
+
+	.split-row div { /* Disable padding-right since splitting rows is disabled */
+		padding-right: 0;
+	}
+}
